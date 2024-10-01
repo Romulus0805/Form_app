@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% set active_page = "home" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!--page content-->
+    <h1>Home Page</h1>
+	<h2>This is a website for movie recommendations, we'll ask you questions and qince you submit we'll give you an answer</h2>
+	<div class="container mt-3">
+		<h3>select an option</h3>
+		<p>this will help us determine what movie we should recommend</p>
+		<form action="/response">
+			<label for="sel1" class="form-label">do you want something in theters or not:</label>
+			<select class="form-select form-select-lg" id="sel1" name="sellist1">
+				<option>in theaters</option>
+				<option>on streaming</option>
+			</select>
+			<br>
+			
+			<label for="sel2" class="form-label">favorite movie genre(s):</label>
+			<select multiple class="form-select form-select-lg" id="sel2" name="sellist2" required>
+				<option>Horror</option>
+				<option>Action</option>
+				<option>Science fiction</option>
+				<option>Romance</option>
+				<option>Comedy</option>
+				<option>Drama</option>
+			</select>
+			<button type="submit" class="btn btn-primary mt-3">Submit</button>
+		</form>
+	</div>
+
+{% endblock %}
